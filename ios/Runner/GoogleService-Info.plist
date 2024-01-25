@@ -2,18 +2,24 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>CLIENT_ID</key>
+	<string>62003921460-9t792kft9ogc6h7bnj1fc7393sc678r3.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.62003921460-9t792kft9ogc6h7bnj1fc7393sc678r3</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>62003921460-oat5ask8v7co9lsfp93qpeabfs0arubs.apps.googleusercontent.com</string>
 	<key>API_KEY</key>
-	<string>AIzaSyCKLto9GYgoojXcLqqUc-pOBGPhtx4PC6s</string>
+	<string>AIzaSyCDXhprZYXdGXcTSByXmSGUVETgUYlcf2k</string>
 	<key>GCM_SENDER_ID</key>
-	<string>250380771316</string>
+	<string>62003921460</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>com.proossa.owner</string>
 	<key>PROJECT_ID</key>
-	<string>proossa-owner</string>
+	<string>proossa-9f44b</string>
 	<key>STORAGE_BUCKET</key>
-	<string>proossa-owner.appspot.com</string>
+	<string>proossa-9f44b.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -25,6 +31,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:250380771316:ios:a410dcb6d7c324d48ea3a1</string>
+	<string>1:62003921460:ios:d09f0c88a85a87beffc061</string>
 </dict>
 </plist>
