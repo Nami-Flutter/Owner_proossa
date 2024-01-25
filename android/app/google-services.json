@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "250380771316",
+    "project_id": "proossa-owner",
+    "storage_bucket": "proossa-owner.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:250380771316:android:1618a2b4f8eb2ecf8ea3a1",
+        "android_client_info": {
+          "package_name": "com.proossa.owner"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBGPhOinfOAU_dg0qmucYFrhMr88cOrC7c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
