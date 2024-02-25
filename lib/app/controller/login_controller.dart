@@ -141,11 +141,11 @@ class LoginController extends GetxController implements GetxService {
               myMap['individual']['total_rating'].toString());
         } else {
           parser.saveOtherInfo(
-              myMap['salon']['name'].toString(),
-              myMap['salon']['cover'].toString(),
+              myMap['salon']!=null&& myMap['salon']['name']!=null? myMap['salon']['name'].toString():"",
+              myMap['salon']!=null? myMap['salon']['cover'].toString():"",
               'NA',
-              double.parse(myMap['salon']['rating'].toString()),
-              myMap['salon']['total_rating'].toString());
+              double.parse( myMap['salon']!=null?myMap['salon']['rating'].toString():"0"),
+              myMap['salon']!=null?myMap['salon']['total_rating'].toString():"");
         }
         var updateParam = {
           "id": myMap['user']['id'].toString(),

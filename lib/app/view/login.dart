@@ -83,8 +83,9 @@ class _LoginScreenState extends State<LoginScreen> {
                     topRight: Radius.circular(20),
                   ),
                 ),
-                child: value.loginVersion == 0
-                    ? Column(
+                // child: value.loginVersion == 0
+                //     ?
+              child:  Column(
                         children: [
                           Padding(
                             padding: const EdgeInsets.only(top: 30),
@@ -250,366 +251,366 @@ class _LoginScreenState extends State<LoginScreen> {
                           ),
                         ],
                       )
-                    : value.loginVersion == 1
-                        ? Column(
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.only(top: 30),
-                                child: Row(
-                                  children: [
-                                    Text(
-                                      'Welcome'.tr,
-                                      style: const TextStyle(
-                                          color: ThemeProvider.blackColor,
-                                          fontSize: 17),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              Padding(
-                                padding:
-                                    const EdgeInsets.symmetric(vertical: 10),
-                                child: Row(
-                                  children: [
-                                    Text(
-                                      'Login With Your Account'.tr,
-                                      style: const TextStyle(
-                                          color: ThemeProvider.greyColor,
-                                          fontSize: 13),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              Padding(
-                                padding:
-                                    const EdgeInsets.symmetric(vertical: 5),
-                                child: Row(
-                                  children: <Widget>[
-                                    Expanded(
-                                        flex: 1,
-                                        child: CountryCodePicker(
-                                          onChanged: (e) =>
-                                              value.updateCountryCode(
-                                                  e.dialCode.toString()),
-                                          initialSelection: 'IN',
-                                          favorite: const ['+91', 'IN'],
-                                          showCountryOnly: false,
-                                          showOnlyCountryWhenClosed: false,
-                                          alignLeft: false,
-                                        )),
-                                    Expanded(
-                                      flex: 3,
-                                      child: Padding(
-                                        padding:
-                                            const EdgeInsets.only(right: 5),
-                                        child: TextFormField(
-                                          controller: value.mobileNo,
-                                          textInputAction: TextInputAction.next,
-                                          keyboardType: TextInputType.number,
-                                          decoration: InputDecoration(
-                                            filled: true,
-                                            fillColor: ThemeProvider.whiteColor,
-                                            labelText: 'Mobile Number'.tr,
-                                            hintStyle: const TextStyle(
-                                                color: ThemeProvider.greyColor,
-                                                fontSize: 12),
-                                            contentPadding:
-                                                const EdgeInsets.only(
-                                                    bottom: 8.0,
-                                                    top: 14.0,
-                                                    left: 20),
-                                            focusedBorder: OutlineInputBorder(
-                                              borderRadius:
-                                                  BorderRadius.circular(100),
-                                              borderSide: const BorderSide(
-                                                  color:
-                                                      ThemeProvider.appColor),
-                                            ),
-                                            enabledBorder: OutlineInputBorder(
-                                                borderRadius:
-                                                    BorderRadius.circular(100),
-                                                borderSide: const BorderSide(
-                                                    color: ThemeProvider
-                                                        .appColor)),
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              Padding(
-                                padding:
-                                    const EdgeInsets.symmetric(vertical: 5),
-                                child: SizedBox(
-                                  width: double.infinity,
-                                  child: TextField(
-                                    controller: value.passwordTextEditor,
-                                    obscureText:
-                                        value.passwordVisible.value == true
-                                            ? false
-                                            : true,
-                                    decoration: InputDecoration(
-                                      filled: true,
-                                      fillColor: ThemeProvider.whiteColor,
-                                      suffixIcon: InkWell(
-                                        onTap: () {
-                                          value.togglePassword();
-                                        },
-                                        child: Icon(
-                                          value.passwordVisible.value == false
-                                              ? Icons.visibility
-                                              : Icons.visibility_off,
-                                          color: ThemeProvider.appColor,
-                                        ),
-                                      ),
-                                      hintText: 'Password'.tr,
-                                      hintStyle: const TextStyle(
-                                          color: ThemeProvider.greyColor,
-                                          fontSize: 12),
-                                      contentPadding: const EdgeInsets.only(
-                                          bottom: 8.0,
-                                          top: 14.0,
-                                          left: 20,
-                                          right: 20),
-                                      focusedBorder: OutlineInputBorder(
-                                        borderRadius:
-                                            BorderRadius.circular(100),
-                                        borderSide: const BorderSide(
-                                            color: ThemeProvider.appColor),
-                                      ),
-                                      enabledBorder: OutlineInputBorder(
-                                          borderRadius:
-                                              BorderRadius.circular(100),
-                                          borderSide: const BorderSide(
-                                              color: ThemeProvider.appColor)),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              Padding(
-                                padding:
-                                    const EdgeInsets.symmetric(vertical: 10),
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    InkWell(
-                                      onTap: () {
-                                        value.onForgot();
-                                      },
-                                      child: Text(
-                                        'Forgot Password?'.tr,
-                                        style: const TextStyle(
-                                            color: ThemeProvider.blackColor,
-                                            fontSize: 13),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              Padding(
-                                padding:
-                                    const EdgeInsets.symmetric(vertical: 20),
-                                child: InkWell(
-                                  onTap: () {
-                                    value.loginWithPhonePassword();
-                                  },
-                                  child: Container(
-                                    width: double.infinity,
-                                    padding: const EdgeInsets.symmetric(
-                                        vertical: 13.0),
-                                    decoration: contentButtonStyle(),
-                                    child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      children: [
-                                        Text(
-                                          'LOG IN'.tr,
-                                          style: const TextStyle(
-                                              color: ThemeProvider.whiteColor,
-                                              fontSize: 17),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.only(top: 10),
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    InkWell(
-                                      onTap: () {
-                                        value.onSignUp();
-                                      },
-                                      child: Text(
-                                        "Don't have an Account? Sign Up".tr,
-                                        style: const TextStyle(
-                                            color: ThemeProvider.greyColor,
-                                            fontSize: 13),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ],
-                          )
-                        : Column(
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.only(top: 30),
-                                child: Row(
-                                  children: [
-                                    Text(
-                                      'Welcome'.tr,
-                                      style: const TextStyle(
-                                          color: ThemeProvider.blackColor,
-                                          fontSize: 17),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              Padding(
-                                padding:
-                                    const EdgeInsets.symmetric(vertical: 10),
-                                child: Row(
-                                  children: [
-                                    Text(
-                                      'Login With Your Account'.tr,
-                                      style: const TextStyle(
-                                          color: ThemeProvider.greyColor,
-                                          fontSize: 13),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              Padding(
-                                padding:
-                                    const EdgeInsets.symmetric(vertical: 5),
-                                child: Row(
-                                  children: <Widget>[
-                                    Expanded(
-                                        flex: 1,
-                                        child: CountryCodePicker(
-                                          onChanged: (e) =>
-                                              value.updateCountryCode(
-                                                  e.dialCode.toString()),
-                                          initialSelection: 'IN',
-                                          favorite: const ['+91', 'IN'],
-                                          showCountryOnly: false,
-                                          showOnlyCountryWhenClosed: false,
-                                          alignLeft: false,
-                                        )),
-                                    Expanded(
-                                      flex: 3,
-                                      child: Padding(
-                                        padding:
-                                            const EdgeInsets.only(right: 5),
-                                        child: TextFormField(
-                                          controller: value.mobileNo,
-                                          textInputAction: TextInputAction.next,
-                                          keyboardType: TextInputType.number,
-                                          decoration: InputDecoration(
-                                            filled: true,
-                                            fillColor: ThemeProvider.whiteColor,
-                                            labelText: 'Mobile Number'.tr,
-                                            hintStyle: const TextStyle(
-                                                color: ThemeProvider.greyColor,
-                                                fontSize: 12),
-                                            contentPadding:
-                                                const EdgeInsets.only(
-                                                    bottom: 8.0,
-                                                    top: 14.0,
-                                                    left: 20),
-                                            focusedBorder: OutlineInputBorder(
-                                              borderRadius:
-                                                  BorderRadius.circular(100),
-                                              borderSide: const BorderSide(
-                                                  color:
-                                                      ThemeProvider.appColor),
-                                            ),
-                                            enabledBorder: OutlineInputBorder(
-                                                borderRadius:
-                                                    BorderRadius.circular(100),
-                                                borderSide: const BorderSide(
-                                                    color: ThemeProvider
-                                                        .appColor)),
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              Padding(
-                                padding:
-                                    const EdgeInsets.symmetric(vertical: 10),
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    InkWell(
-                                      onTap: () {
-                                        value.onForgot();
-                                      },
-                                      child: Text(
-                                        'Forgot Password?'.tr,
-                                        style: const TextStyle(
-                                            color: ThemeProvider.blackColor,
-                                            fontSize: 13),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              Padding(
-                                padding:
-                                    const EdgeInsets.symmetric(vertical: 20),
-                                child: InkWell(
-                                  onTap: () {
-                                    value.loginWithPhoneOTP();
-                                  },
-                                  child: Container(
-                                    width: double.infinity,
-                                    padding: const EdgeInsets.symmetric(
-                                        vertical: 13.0),
-                                    decoration: contentButtonStyle(),
-                                    child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      children: [
-                                        Text(
-                                          'LOG IN'.tr,
-                                          style: const TextStyle(
-                                              color: ThemeProvider.whiteColor,
-                                              fontSize: 17),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.only(top: 10),
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    InkWell(
-                                      onTap: () {
-                                        value.onSignUp();
-                                      },
-                                      child: Text(
-                                        "Don't have an Account? Sign Up".tr,
-                                        style: const TextStyle(
-                                            color: ThemeProvider.greyColor,
-                                            fontSize: 13),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ],
-                          ),
+                    // : value.loginVersion == 1
+                    //     ? Column(
+                    //         children: [
+                    //           Padding(
+                    //             padding: const EdgeInsets.only(top: 30),
+                    //             child: Row(
+                    //               children: [
+                    //                 Text(
+                    //                   'Welcome'.tr,
+                    //                   style: const TextStyle(
+                    //                       color: ThemeProvider.blackColor,
+                    //                       fontSize: 17),
+                    //                 ),
+                    //               ],
+                    //             ),
+                    //           ),
+                    //           Padding(
+                    //             padding:
+                    //                 const EdgeInsets.symmetric(vertical: 10),
+                    //             child: Row(
+                    //               children: [
+                    //                 Text(
+                    //                   'Login With Your Account'.tr,
+                    //                   style: const TextStyle(
+                    //                       color: ThemeProvider.greyColor,
+                    //                       fontSize: 13),
+                    //                 ),
+                    //               ],
+                    //             ),
+                    //           ),
+                    //           Padding(
+                    //             padding:
+                    //                 const EdgeInsets.symmetric(vertical: 5),
+                    //             child: Row(
+                    //               children: <Widget>[
+                    //                 Expanded(
+                    //                     flex: 1,
+                    //                     child: CountryCodePicker(
+                    //                       onChanged: (e) =>
+                    //                           value.updateCountryCode(
+                    //                               e.dialCode.toString()),
+                    //                       initialSelection: 'IN',
+                    //                       favorite: const ['+91', 'IN'],
+                    //                       showCountryOnly: false,
+                    //                       showOnlyCountryWhenClosed: false,
+                    //                       alignLeft: false,
+                    //                     )),
+                    //                 Expanded(
+                    //                   flex: 3,
+                    //                   child: Padding(
+                    //                     padding:
+                    //                         const EdgeInsets.only(right: 5),
+                    //                     child: TextFormField(
+                    //                       controller: value.mobileNo,
+                    //                       textInputAction: TextInputAction.next,
+                    //                       keyboardType: TextInputType.number,
+                    //                       decoration: InputDecoration(
+                    //                         filled: true,
+                    //                         fillColor: ThemeProvider.whiteColor,
+                    //                         labelText: 'Mobile Number'.tr,
+                    //                         hintStyle: const TextStyle(
+                    //                             color: ThemeProvider.greyColor,
+                    //                             fontSize: 12),
+                    //                         contentPadding:
+                    //                             const EdgeInsets.only(
+                    //                                 bottom: 8.0,
+                    //                                 top: 14.0,
+                    //                                 left: 20),
+                    //                         focusedBorder: OutlineInputBorder(
+                    //                           borderRadius:
+                    //                               BorderRadius.circular(100),
+                    //                           borderSide: const BorderSide(
+                    //                               color:
+                    //                                   ThemeProvider.appColor),
+                    //                         ),
+                    //                         enabledBorder: OutlineInputBorder(
+                    //                             borderRadius:
+                    //                                 BorderRadius.circular(100),
+                    //                             borderSide: const BorderSide(
+                    //                                 color: ThemeProvider
+                    //                                     .appColor)),
+                    //                       ),
+                    //                     ),
+                    //                   ),
+                    //                 ),
+                    //               ],
+                    //             ),
+                    //           ),
+                    //           Padding(
+                    //             padding:
+                    //                 const EdgeInsets.symmetric(vertical: 5),
+                    //             child: SizedBox(
+                    //               width: double.infinity,
+                    //               child: TextField(
+                    //                 controller: value.passwordTextEditor,
+                    //                 obscureText:
+                    //                     value.passwordVisible.value == true
+                    //                         ? false
+                    //                         : true,
+                    //                 decoration: InputDecoration(
+                    //                   filled: true,
+                    //                   fillColor: ThemeProvider.whiteColor,
+                    //                   suffixIcon: InkWell(
+                    //                     onTap: () {
+                    //                       value.togglePassword();
+                    //                     },
+                    //                     child: Icon(
+                    //                       value.passwordVisible.value == false
+                    //                           ? Icons.visibility
+                    //                           : Icons.visibility_off,
+                    //                       color: ThemeProvider.appColor,
+                    //                     ),
+                    //                   ),
+                    //                   hintText: 'Password'.tr,
+                    //                   hintStyle: const TextStyle(
+                    //                       color: ThemeProvider.greyColor,
+                    //                       fontSize: 12),
+                    //                   contentPadding: const EdgeInsets.only(
+                    //                       bottom: 8.0,
+                    //                       top: 14.0,
+                    //                       left: 20,
+                    //                       right: 20),
+                    //                   focusedBorder: OutlineInputBorder(
+                    //                     borderRadius:
+                    //                         BorderRadius.circular(100),
+                    //                     borderSide: const BorderSide(
+                    //                         color: ThemeProvider.appColor),
+                    //                   ),
+                    //                   enabledBorder: OutlineInputBorder(
+                    //                       borderRadius:
+                    //                           BorderRadius.circular(100),
+                    //                       borderSide: const BorderSide(
+                    //                           color: ThemeProvider.appColor)),
+                    //                 ),
+                    //               ),
+                    //             ),
+                    //           ),
+                    //           Padding(
+                    //             padding:
+                    //                 const EdgeInsets.symmetric(vertical: 10),
+                    //             child: Row(
+                    //               mainAxisAlignment: MainAxisAlignment.center,
+                    //               children: [
+                    //                 InkWell(
+                    //                   onTap: () {
+                    //                     value.onForgot();
+                    //                   },
+                    //                   child: Text(
+                    //                     'Forgot Password?'.tr,
+                    //                     style: const TextStyle(
+                    //                         color: ThemeProvider.blackColor,
+                    //                         fontSize: 13),
+                    //                   ),
+                    //                 ),
+                    //               ],
+                    //             ),
+                    //           ),
+                    //           Padding(
+                    //             padding:
+                    //                 const EdgeInsets.symmetric(vertical: 20),
+                    //             child: InkWell(
+                    //               onTap: () {
+                    //                 value.loginWithPhonePassword();
+                    //               },
+                    //               child: Container(
+                    //                 width: double.infinity,
+                    //                 padding: const EdgeInsets.symmetric(
+                    //                     vertical: 13.0),
+                    //                 decoration: contentButtonStyle(),
+                    //                 child: Row(
+                    //                   mainAxisAlignment:
+                    //                       MainAxisAlignment.center,
+                    //                   children: [
+                    //                     Text(
+                    //                       'LOG IN'.tr,
+                    //                       style: const TextStyle(
+                    //                           color: ThemeProvider.whiteColor,
+                    //                           fontSize: 17),
+                    //                     ),
+                    //                   ],
+                    //                 ),
+                    //               ),
+                    //             ),
+                    //           ),
+                    //           Padding(
+                    //             padding: const EdgeInsets.only(top: 10),
+                    //             child: Row(
+                    //               mainAxisAlignment: MainAxisAlignment.center,
+                    //               children: [
+                    //                 InkWell(
+                    //                   onTap: () {
+                    //                     value.onSignUp();
+                    //                   },
+                    //                   child: Text(
+                    //                     "Don't have an Account? Sign Up".tr,
+                    //                     style: const TextStyle(
+                    //                         color: ThemeProvider.greyColor,
+                    //                         fontSize: 13),
+                    //                   ),
+                    //                 ),
+                    //               ],
+                    //             ),
+                    //           ),
+                    //         ],
+                    //       )
+                    //     : Column(
+                    //         children: [
+                    //           Padding(
+                    //             padding: const EdgeInsets.only(top: 30),
+                    //             child: Row(
+                    //               children: [
+                    //                 Text(
+                    //                   'Welcome'.tr,
+                    //                   style: const TextStyle(
+                    //                       color: ThemeProvider.blackColor,
+                    //                       fontSize: 17),
+                    //                 ),
+                    //               ],
+                    //             ),
+                    //           ),
+                    //           Padding(
+                    //             padding:
+                    //                 const EdgeInsets.symmetric(vertical: 10),
+                    //             child: Row(
+                    //               children: [
+                    //                 Text(
+                    //                   'Login With Your Account'.tr,
+                    //                   style: const TextStyle(
+                    //                       color: ThemeProvider.greyColor,
+                    //                       fontSize: 13),
+                    //                 ),
+                    //               ],
+                    //             ),
+                    //           ),
+                    //           Padding(
+                    //             padding:
+                    //                 const EdgeInsets.symmetric(vertical: 5),
+                    //             child: Row(
+                    //               children: <Widget>[
+                    //                 Expanded(
+                    //                     flex: 1,
+                    //                     child: CountryCodePicker(
+                    //                       onChanged: (e) =>
+                    //                           value.updateCountryCode(
+                    //                               e.dialCode.toString()),
+                    //                       initialSelection: 'IN',
+                    //                       favorite: const ['+91', 'IN'],
+                    //                       showCountryOnly: false,
+                    //                       showOnlyCountryWhenClosed: false,
+                    //                       alignLeft: false,
+                    //                     )),
+                    //                 Expanded(
+                    //                   flex: 3,
+                    //                   child: Padding(
+                    //                     padding:
+                    //                         const EdgeInsets.only(right: 5),
+                    //                     child: TextFormField(
+                    //                       controller: value.mobileNo,
+                    //                       textInputAction: TextInputAction.next,
+                    //                       keyboardType: TextInputType.number,
+                    //                       decoration: InputDecoration(
+                    //                         filled: true,
+                    //                         fillColor: ThemeProvider.whiteColor,
+                    //                         labelText: 'Mobile Number'.tr,
+                    //                         hintStyle: const TextStyle(
+                    //                             color: ThemeProvider.greyColor,
+                    //                             fontSize: 12),
+                    //                         contentPadding:
+                    //                             const EdgeInsets.only(
+                    //                                 bottom: 8.0,
+                    //                                 top: 14.0,
+                    //                                 left: 20),
+                    //                         focusedBorder: OutlineInputBorder(
+                    //                           borderRadius:
+                    //                               BorderRadius.circular(100),
+                    //                           borderSide: const BorderSide(
+                    //                               color:
+                    //                                   ThemeProvider.appColor),
+                    //                         ),
+                    //                         enabledBorder: OutlineInputBorder(
+                    //                             borderRadius:
+                    //                                 BorderRadius.circular(100),
+                    //                             borderSide: const BorderSide(
+                    //                                 color: ThemeProvider
+                    //                                     .appColor)),
+                    //                       ),
+                    //                     ),
+                    //                   ),
+                    //                 ),
+                    //               ],
+                    //             ),
+                    //           ),
+                    //           Padding(
+                    //             padding:
+                    //                 const EdgeInsets.symmetric(vertical: 10),
+                    //             child: Row(
+                    //               mainAxisAlignment: MainAxisAlignment.center,
+                    //               children: [
+                    //                 InkWell(
+                    //                   onTap: () {
+                    //                     value.onForgot();
+                    //                   },
+                    //                   child: Text(
+                    //                     'Forgot Password?'.tr,
+                    //                     style: const TextStyle(
+                    //                         color: ThemeProvider.blackColor,
+                    //                         fontSize: 13),
+                    //                   ),
+                    //                 ),
+                    //               ],
+                    //             ),
+                    //           ),
+                    //           Padding(
+                    //             padding:
+                    //                 const EdgeInsets.symmetric(vertical: 20),
+                    //             child: InkWell(
+                    //               onTap: () {
+                    //                 value.loginWithPhoneOTP();
+                    //               },
+                    //               child: Container(
+                    //                 width: double.infinity,
+                    //                 padding: const EdgeInsets.symmetric(
+                    //                     vertical: 13.0),
+                    //                 decoration: contentButtonStyle(),
+                    //                 child: Row(
+                    //                   mainAxisAlignment:
+                    //                       MainAxisAlignment.center,
+                    //                   children: [
+                    //                     Text(
+                    //                       'LOG IN'.tr,
+                    //                       style: const TextStyle(
+                    //                           color: ThemeProvider.whiteColor,
+                    //                           fontSize: 17),
+                    //                     ),
+                    //                   ],
+                    //                 ),
+                    //               ),
+                    //             ),
+                    //           ),
+                    //           Padding(
+                    //             padding: const EdgeInsets.only(top: 10),
+                    //             child: Row(
+                    //               mainAxisAlignment: MainAxisAlignment.center,
+                    //               children: [
+                    //                 InkWell(
+                    //                   onTap: () {
+                    //                     value.onSignUp();
+                    //                   },
+                    //                   child: Text(
+                    //                     "Don't have an Account? Sign Up".tr,
+                    //                     style: const TextStyle(
+                    //                         color: ThemeProvider.greyColor,
+                    //                         fontSize: 13),
+                    //                   ),
+                    //                 ),
+                    //               ],
+                    //             ),
+                    //           ),
+                    //         ],
+                    //       ),
               ),
             ),
           ),
